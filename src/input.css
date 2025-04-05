@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  /* colors */
+  --color-primary: hsl(4, 100%, 67%);
+  --color-Blue-800: hsl(234, 29%, 20%);
+  --color-Blue-700: hsl(235, 18%, 26%);
+  --color-Grey: hsl(0, 0%, 58%);
+
+  /* font family */
+  --font-roboto: "Roboto", sans-serif;
+}
