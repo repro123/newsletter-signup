@@ -20,42 +20,51 @@
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
   </head>
-  <body>
-    <main>
-      <div>
-        <picture>
+  <body
+    class="flex flex-col items-center min-h-dvh font-roboto text-Blue-700 font-normal gap-4"
+  >
+    <main class="w-full m-auto">
+      <h1 class="sr-only">Sign up to our newsletter</h1>
+      <div
+        class="flex flex-col items-center justify-center max-w-2xl gap-10 mx-auto"
+      >
+        <picture class="w-full">
           <source
             media="(min-width: 768px)"
             srcset="./assets/images/illustration-sign-up-desktop.svg"
           />
-          <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" />
+          <img
+            src="./assets/images/illustration-sign-up-mobile.svg"
+            alt=""
+            class="w-full"
+          />
         </picture>
 
-        <div>
-          <h2>Stay updated!</h2>
+        <div class="flex flex-col justify-center gap-6 px-4">
+          <h2 class="text-Blue-800 font-bold text-4xl">Stay updated!</h2>
           <p>Join 60,000+ product managers receiving monthly updates on:</p>
-          <ul>
-            <li>
+          <ul class="flex flex-col gap-4">
+            <li class="flex items-center gap-2">
               <img src="./assets/images/icon-list.svg" alt="" /><span
                 >Product discovery and building what matters</span
               >
             </li>
-            <li>
+            <li class="flex items-center gap-2">
               <img src="./assets/images/icon-list.svg" alt="" /><span
                 >Measuring to ensure updates are a success</span
               >
             </li>
-            <li>
+            <li class="flex items-center gap-2">
               <img src="./assets/images/icon-list.svg" alt="" /><span
                 >And much more!</span
               >
             </li>
           </ul>
 
-          <form action="#">
-            <div>
-              <label for="email">Email address</label>
-              <p class="error">Valid email required</p>
+          <form action="#" class="flex flex-col gap-4">
+            <div class="flex justify-between items-center font-bold">
+              <label for="email" class="text-Blue-800">Email address</label>
+              <p id="error" class="text-primary hidden">Valid email required</p>
             </div>
             <input
               type="email"
@@ -63,8 +72,15 @@
               id="email"
               required
               placeholder="email@company.com"
+              class="border-2 border-Blue-700 rounded-md p-4 focus:outline-none focus:border-Blue-800 cursor-pointer placeholder:text-Grey placeholder:font-bold"
             />
-            <button type="submit">Subscribe to monthly newsletter</button>
+            <button
+              type="submit"
+              id="submit"
+              class="bg-Blue-800 text-white font-bold rounded-md tracking-wider cursor-pointer py-4"
+            >
+              Subscribe to monthly newsletter
+            </button>
           </form>
         </div>
       </div>
@@ -84,13 +100,21 @@
       <!-- Success message end -->
     </main>
 
-    <footer>
-      <p class="attribution">
+    <footer class="mt-auto w-full text-center px-2">
+      <p class="text-sm md:text-base">
         Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          class="text-primary underline hover:no-underline"
           >Frontend Mentor</a
         >. Coded by
-        <a href="https://github.com/repro123" target="_blank">Bello Ibrahim</a>.
+        <a
+          href="https://github.com/repro123"
+          target="_blank"
+          class="text-primary underline hover:no-underline"
+          >Bello Ibrahim</a
+        >.
       </p>
     </footer>
   </body>
