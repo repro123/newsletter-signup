@@ -10,3 +10,9 @@
   /* font family */
   --font-roboto: "Roboto", sans-serif;
 }
+
+@layer components {
+  .invalidInput {
+    @apply user-invalid:border-primary user-invalid:outline-primary user-invalid:text-primary user-invalid:bg-primary/40;
+  }
+}
