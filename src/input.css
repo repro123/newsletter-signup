@@ -12,7 +12,11 @@
 }
 
 @layer components {
-  .invalidInput {
-    @apply user-invalid:border-primary user-invalid:outline-primary user-invalid:text-primary user-invalid:bg-primary/40;
+  .flex-2 {
+    @apply flex items-center gap-2;
+  }
+
+  .btn {
+    @apply bg-Blue-800 text-white font-bold rounded-md tracking-wider cursor-pointer py-4 focus:outline-none focus:border-0 focus:bg-linear-to-r focus:from-[#ff6a3a] focus:to-[#ff527b] hover:bg-linear-to-r hover:from-[#ff6a3a] hover:to-[#ff527b] transition-all duration-300 shadow-md hover:shadow-lg active:shadow-2xl;
   }
 }

@@ -24,85 +24,104 @@
     class="flex flex-col justify-center items-center min-h-dvh font-roboto text-Blue-700 font-normal gap-4 md:bg-Blue-700"
   >
     <main class="w-full m-auto flex justify-center items-center">
-      <h1 class="sr-only">Sign up to our newsletter</h1>
-      <div
-        class="flex flex-col-reverse items-center justify-center max-w-3xl gap-10 m-auto lg:grid lg:grid-cols-2 lg:max-w-4xl md:bg-white md:p-8 md:rounded-xl lg:mt-8 md:shadow-lg"
-      >
-        <div class="flex flex-col justify-center gap-6 px-4 w-full">
-          <h2 class="text-Blue-800 font-bold text-4xl">Stay updated!</h2>
-          <p>Join 60,000+ product managers receiving monthly updates on:</p>
-          <ul class="flex flex-col gap-4">
-            <li class="flex items-center gap-2">
-              <img src="./assets/images/icon-list.svg" alt="" /><span
-                >Product discovery and building what matters</span
-              >
-            </li>
-            <li class="flex items-center gap-2">
-              <img src="./assets/images/icon-list.svg" alt="" /><span
-                >Measuring to ensure updates are a success</span
-              >
-            </li>
-            <li class="flex items-center gap-2">
-              <img src="./assets/images/icon-list.svg" alt="" /><span
-                >And much more!</span
-              >
-            </li>
-          </ul>
+      <div>
+        <h1 class="sr-only">Sign up to our newsletter</h1>
+        <div
+          id="signUpDiv"
+          class="flex flex-col-reverse items-center justify-center gap-10 m-auto lg:grid lg:grid-cols-2 max-w-3xl lg:max-w-4xl md:bg-white md:p-8 md:rounded-xl lg:mt-8 md:shadow-lg"
+        >
+          <div class="flex flex-col justify-center gap-6 px-4 lg:p-0 w-full">
+            <h2 class="text-Blue-800 font-bold text-4xl">Stay updated!</h2>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul class="flex flex-col gap-4">
+              <li class="flex-2">
+                <img src="./assets/images/icon-list.svg" alt="" /><span
+                  >Product discovery and building what matters</span
+                >
+              </li>
+              <li class="flex-2">
+                <img src="./assets/images/icon-list.svg" alt="" /><span
+                  >Measuring to ensure updates are a success</span
+                >
+              </li>
+              <li class="flex-2">
+                <img src="./assets/images/icon-list.svg" alt="" /><span
+                  >And much more!</span
+                >
+              </li>
+            </ul>
 
-          <form action="#" class="flex flex-col gap-4" novalidate>
-            <div class="flex justify-between items-center font-bold">
-              <label for="email" class="text-Blue-800">Email address</label>
-              <p id="error" class="text-primary" aria-live="polite"></p>
-            </div>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              placeholder="email@company.com"
-              autocomplete="email"
-              class="border-2 border-Blue-700 rounded-md p-4 font-bold focus:border-Blue-800 cursor-pointer placeholder:text-Grey placeholder:font-bold invalidInput"
-            />
-            <button
-              type="submit"
-              id="submit"
-              class="bg-Blue-800 text-white font-bold rounded-md tracking-wider cursor-pointer py-4 focus:outline-none focus:border-0 focus:bg-linear-to-r focus:from-[#ff6a3a] focus:to-[#ff527b] hover:bg-linear-to-r hover:from-[#ff6a3a] hover:to-[#ff527b] transition-all duration-300 shadow-md hover:shadow-lg active:shadow-2xl"
+            <form
+              action="#"
+              class="flex flex-col gap-4"
+              id="signUpForm"
+              novalidate
             >
-              Subscribe to monthly newsletter
-            </button>
-          </form>
-        </div>
+              <div class="flex justify-between items-center font-bold">
+                <label for="email" class="text-Blue-800">Email address</label>
+                <p id="error" class="text-primary" aria-live="polite"></p>
+              </div>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                placeholder="email@company.com"
+                autocomplete="email"
+                class="border-2 border-Blue-700 rounded-md p-4 font-bold focus:border-Blue-800 cursor-pointer placeholder:text-Grey placeholder:font-bold data-invalid:user-invalid:border-primary data-invalid:user-invalid:outline-primary data-invalid:user-invalid:text-primary data-invalid:user-invalid:bg-primary/40"
+              />
+              <button type="submit" id="submit" class="btn">
+                Subscribe to monthly newsletter
+              </button>
+            </form>
+          </div>
 
-        <picture class="w-full">
-          <source
-            media="(min-width: 64rem)"
-            srcset="./assets/images/illustration-sign-up-desktop.svg"
-          />
-          <img
-            src="./assets/images/illustration-sign-up-mobile.svg"
-            alt=""
-            class="w-full"
-          />
-        </picture>
+          <picture class="w-full">
+            <source
+              media="(min-width: 64rem)"
+              srcset="./assets/images/illustration-sign-up-desktop.svg"
+            />
+            <img
+              src="./assets/images/illustration-sign-up-mobile.svg"
+              alt=""
+              class="w-full"
+            />
+          </picture>
+        </div>
       </div>
 
       <!-- Success message start -->
-      <dialog>
-        <img src="./assets/images/icon-success.svg" alt="" />
-        <h2>Thanks for subscribing!</h2>
-        <p>
-          A confirmation email has been sent to <span id="emailAddress"></span>.
-          Please open it and click the button inside to confirm your
-          subscription.
-        </p>
-        <button id="closeDialog">Dismiss message</button>
+      <dialog
+        id="dialog"
+        class="max-w-full max-h-full w-full h-full outline-0 border-0 md:max-w-96 md:h-fit md:m-auto md:rounded-xl md:shadow-lg"
+      >
+        <div
+          class="border h-full w-full flex flex-col justify-center p-6 md:p-10 md:gap-4 text-Blue-800"
+        >
+          <div class="grow flex flex-col justify-center gap-8 md:gap-4">
+            <img
+              src="./assets/images/icon-success.svg"
+              alt=""
+              class="w-12 h-12"
+            />
+            <h2 class="font-bold text-4xl">Thanks for subscribing!</h2>
+            <p>
+              A confirmation email has been sent to
+              <span id="emailAddress" class="font-bold"></span>. Please open it
+              and click the button inside to confirm your subscription.
+            </p>
+          </div>
+          <form action="#" method="dialog" class="">
+            <button id="closeDialog" class="btn w-full">Dismiss message</button>
+          </form>
+        </div>
       </dialog>
 
       <!-- Success message end -->
     </main>
 
     <footer class="mt-auto w-full text-center px-2">
-      <p class="text-sm md:text-base lg:text-white">
+      <p class="text-sm md:text-base md:text-white">
         Challenge by
         <a
           href="https://www.frontendmentor.io?ref=challenge"
@@ -118,5 +137,7 @@
         >.
       </p>
     </footer>
+
+    <script src="./src/index.js"></script>
   </body>
 </html>
